@@ -1,0 +1,17 @@
+# Protocolith
+
+> Protocolith records, verifies and issues trial records: a protocol is frozen before a run, results go into a hash-chained ledger, the history is verified, and evidence cards are issued. Python, standard library only. CLI, Python API and MCP server (stdio).
+
+## Docs
+- [Documentation](https://protocolith.github.io/protocolith/docs/): guides, reference, specification
+- [AI agent guide (MCP)](https://protocolith.github.io/protocolith/docs/guides/ai-agent-mcp/): tools, resources, prompts
+- [Core specification](https://github.com/Protocolith/protocolith/blob/main/docs/spec/CORE_SPEC.md): ledger format, rules, error codes
+
+## Code
+- [Repository](https://github.com/Protocolith/protocolith): source, issues, discussions
+- [PyPI](https://pypi.org/project/protocolith/): `pip install protocolith`
+
+## Rules for agents
+- Freeze the protocol before any run; record every run, including failures and blocked sources.
+- From 0.7.0: call claim-check before stating a result and use its wording.
+- Never report a result that is not in the ledger; never turn missing data into a negative result.

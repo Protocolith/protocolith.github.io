@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Protocolith</title>
+<meta name="description" content="Protocolith records, verifies and issues trial records: freeze a protocol, record results in a hash-chained ledger, verify the history, issue evidence cards. Python, standard library only, with an MCP server for AI agents.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://protocolith.github.io/">
+<meta property="og:title" content="Protocolith">
+<meta property="og:description" content="Records, verifies and issues trial records.">
+<meta property="og:image" content="https://protocolith.github.io/social-preview.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Protocolith","description":"Records, verifies and issues trial records.","codeRepository":"https://github.com/Protocolith/protocolith","programmingLanguage":"Python","license":"https://spdx.org/licenses/Apache-2.0.html","url":"https://protocolith.github.io/"}</script>
+<style>
+:root{--bg:#f7f9fc;--fg:#17202b;--mut:#4a5868;--card:#fff;--line:#dbe3ee;--acc:#1f3a5f;--amber:#e8b04a;--code:#0e141b;--codefg:#eef2f6}
+@media (prefers-color-scheme:dark){:root{--bg:#0e141b;--fg:#eef2f6;--mut:#b4bfcb;--card:#141c26;--line:#243244;--acc:#8fb3e6;--code:#0a0f15;--codefg:#eef2f6}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}.w{max-width:980px;margin:0 auto;padding:0 16px}
+header{padding:48px 0 24px;display:flex;gap:24px;align-items:center;flex-wrap:wrap}header img{width:96px;height:96px}
+h1{margin:0;font-size:2.4rem;letter-spacing:-.02em}.lead{margin:.3rem 0 0;color:var(--mut);font-size:1.15rem}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0 8px}.btn{padding:10px 18px;border-radius:8px;border:1px solid var(--line);background:var(--card);text-decoration:none;font-weight:600;color:var(--fg)}
+.btn.p{background:var(--amber);border-color:var(--amber);color:#17202b}.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin:28px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px}.card h3{margin:.1rem 0 .4rem}
+pre{background:var(--code);color:var(--codefg);padding:16px;border-radius:10px;overflow:auto;font-size:.9rem}
+h2{margin-top:36px}footer{margin:48px 0 32px;color:var(--mut);font-size:.9rem;border-top:1px solid var(--line);padding-top:16px}
+</style>
+</head>
+<body>
+<div class="w">
+<header><img src="mark.svg" alt="Protocolith mark"><div><h1>Protocolith</h1><p class="lead">Records, verifies and issues trial records.</p></div></header>
+<p>Freeze the protocol before the run. Record every result in a hash-chained ledger. Verify that the history still adds up. Issue an evidence card. Python, standard library only; a command line, a Python API and an MCP server for AI agents.</p>
+<div class="btns"><a class="btn p" href="https://protocolith.github.io/protocolith/docs/">Documentation</a><a class="btn" href="https://github.com/Protocolith/protocolith">GitHub</a><a class="btn" href="https://pypi.org/project/protocolith/">PyPI</a><a class="btn" href="https://doi.org/10.5281/zenodo.24021995">DOI</a></div>
+<div class="grid">
+<div class="card"><h3>1. Freeze</h3><p>The protocol and its SHA-256 are stored before anything runs, so thresholds cannot move after you see the result.</p></div>
+<div class="card"><h3>2. Record</h3><p>Every run goes in, including failed and blocked ones. A closed status vocabulary keeps "no data" from turning into "negative".</p></div>
+<div class="card"><h3>3. Verify and anchor</h3><p>Any silent edit breaks the hash chain. Anchoring the head outside the ledger (timestamp, tag, archive; in development for 0.7.0) will detect even a full rewrite.</p></div>
+</div>
+<h2>Try it</h2>
+<pre>pipx install protocolith
+protocolith init
+protocolith freeze protocol.json
+protocolith record record.json
+protocolith verify-ledger
+protocolith summary</pre>
+<h2>For AI agents</h2>
+<p>The MCP server (<code>protocolith mcp</code>) exposes tools to freeze, record, verify, summarize and issue records and to read the specification and schemas. A claim check and ledger anchoring for agents are in development for 0.7.0. See <a href="https://protocolith.github.io/protocolith/docs/">the guide</a> and <a href="llms.txt">llms.txt</a>.</p>
+<h2>Honest limits</h2>
+<p>A local ledger is tamper-evident, not tamper-proof, until its head is published or timestamped outside your control. Results are single-operator unless a card says otherwise. Protocolith does not run experiments or judge whether a protocol is good.</p>
+<footer>Protocolith is open source (Apache-2.0). Formerly ClaimBound Evidence. <a href="https://github.com/Protocolith/protocolith">Source</a> &middot; <a href="https://github.com/Protocolith/protocolith/discussions">Discussions</a> &middot; <a href="https://github.com/Protocolith/protocolith/security/policy">Security</a></footer>
+</div>
+</body>
+</html>
