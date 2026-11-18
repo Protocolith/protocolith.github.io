@@ -35,7 +35,7 @@ h2{margin-top:36px}footer{margin:48px 0 32px;color:var(--mut);font-size:.9rem;bo
 <div class="grid">
 <div class="card"><h3>1. Freeze</h3><p>The protocol and its SHA-256 are stored before anything runs, so thresholds cannot move after you see the result.</p></div>
 <div class="card"><h3>2. Record</h3><p>Every run goes in, including failed and blocked ones. A closed status vocabulary keeps "no data" from turning into "negative".</p></div>
-<div class="card"><h3>3. Verify and anchor</h3><p>Any silent edit breaks the hash chain. Anchoring the head outside the ledger (timestamp, tag, archive; in development for 0.7.0) will detect even a full rewrite.</p></div>
+<div class="card"><h3>3. Verify and anchor</h3><p>Any silent edit breaks the hash chain. Anchoring the head outside the ledger (RFC 3161 time-stamp, git tag, Wayback Machine, Zenodo) detects even a full rewrite or a cut-off ledger.</p></div>
 </div>
 <h2>Try it</h2>
 <pre>pipx install protocolith
@@ -45,7 +45,7 @@ protocolith record record.json
 protocolith verify-ledger
 protocolith summary</pre>
 <h2>For AI agents</h2>
-<p>The MCP server (<code>protocolith mcp</code>) exposes tools to freeze, record, verify, summarize and issue records and to read the specification and schemas. A claim check and ledger anchoring for agents are in development for 0.7.0. See <a href="https://protocolith.github.io/protocolith/docs/">the guide</a> and <a href="llms.txt">llms.txt</a>.</p>
+<p>The MCP server (<code>protocolith mcp</code>) exposes tools to freeze, record, verify, summarize and issue records and to read the specification and schemas. It also offers a claim check (what may and may not be said about a result), anchoring, and selective disclosure (publish each entry in full, as a summary, or hidden while the hash chain still proves nothing was dropped): 15 tools in 0.7.0. See <a href="https://protocolith.github.io/protocolith/docs/">the guide</a> and <a href="llms.txt">llms.txt</a>.</p>
 <h2>Honest limits</h2>
 <p>A local ledger is tamper-evident, not tamper-proof, until its head is published or timestamped outside your control. Results are single-operator unless a card says otherwise. Protocolith does not run experiments or judge whether a protocol is good.</p>
 <footer>Protocolith is open source (Apache-2.0). Formerly ClaimBound Evidence. <a href="https://github.com/Protocolith/protocolith">Source</a> &middot; <a href="https://github.com/Protocolith/protocolith/discussions">Discussions</a> &middot; <a href="https://github.com/Protocolith/protocolith/security/policy">Security</a></footer>

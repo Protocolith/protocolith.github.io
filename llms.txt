@@ -13,5 +13,6 @@
 
 ## Rules for agents
 - Freeze the protocol before any run; record every run, including failures and blocked sources.
-- From 0.7.0: call claim-check before stating a result and use its wording.
+- Call claim-check before stating a result and use its wording (protocolith_claim_check).
+- Before publishing anything from a private ledger, call protocolith_disclose with a policy that names what is public (default hidden), then anchor the head.
 - Never report a result that is not in the ledger; never turn missing data into a negative result.
